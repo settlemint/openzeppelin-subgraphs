@@ -45,6 +45,7 @@
   "fields": [
     { "name": "emitter",                "type": "Account!"       },
     { "name": "transaction",            "type": "Transaction!"   },
+    { "name": "block",                   "type": "Block!"   },
     { "name": "timestamp",              "type": "BigInt!"        },
     { "name": "contract",               "type": "ERC20Contract!" },
     { "name": "from",                   "type": "Account"        },

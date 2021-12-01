@@ -12,6 +12,7 @@ import {
 	decimals,
 	events,
 	transactions,
+	blocks
 } from '@amxx/graphprotocol-utils'
 
 import {
@@ -29,6 +30,7 @@ export function handleTransfer(event: TransferEvent): void {
 	let ev         = new ERC20Transfer(events.id(event))
 	ev.emitter     = contract.id
 	ev.transaction = transactions.log(event).id
+	ev.block       = blocks.log(event.block).id
 	ev.timestamp   = event.block.timestamp
 	ev.contract    = contract.id
 	ev.value       = decimals.toDecimals(event.params.value, contract.decimals)

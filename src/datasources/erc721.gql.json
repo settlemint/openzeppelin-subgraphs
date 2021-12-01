@@ -43,6 +43,7 @@
   "fields": [
     { "name": "emitter",                 "type": "Account!"        },
     { "name": "transaction",             "type": "Transaction!"    },
+    { "name": "block",                   "type": "Block!"   },
     { "name": "timestamp",               "type": "BigInt!"         },
     { "name": "contract",                "type": "ERC721Contract!" },
     { "name": "token",                   "type": "ERC721Token!"    },
