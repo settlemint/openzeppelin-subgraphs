@@ -40,6 +40,7 @@ type ERC20Transfer implements Event @entity {
 	id: ID!
 	emitter: Account!
 	transaction: Transaction!
+	block: Block!
 	timestamp: BigInt!
 	contract: ERC20Contract!
 	from: Account
@@ -59,5 +60,22 @@ type Transaction @entity {
 	id: ID!
 	timestamp: BigInt!
 	blockNumber: BigInt!
+	gasLimit: BigInt!
+	gasPrice: BigInt!
+	nonce: BigInt
+	input: Bytes
+	logIndex: BigInt
+	transactionLogIndex: BigInt
+	logType: String
 	events: [Event!]! @derivedFrom(field: "transaction")
+}
+type Block @entity {
+	id: ID!
+	hash: Bytes!
+	number: BigInt!
+	gasUsed: BigInt!
+	gasLimit: BigInt!
+	timestamp: BigInt!
+	difficulty: BigInt!
+	size: BigInt
 }
